@@ -21,11 +21,11 @@ resource "aws_lb_listener" "front_end" {
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.test.arn
+    target_group_arn = aws_lb_target_group.slave.arn
   }
 }
 resource "aws_lb_target_group_attachment" "slave" {
-  target_group_arn = aws_lb_target_group.test.arn
+  target_group_arn = aws_lb_target_group.slave.arn
   target_id        = "i-060c990e69a4ed8d9"
   port             = 80
 }
