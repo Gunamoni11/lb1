@@ -1,3 +1,6 @@
+provider "aws" {
+  region = "us-east-2"
+}
 resource "aws_lb" "test" {
   name               = "test-lb-tf"
   internal           = false
